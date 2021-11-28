@@ -74,6 +74,7 @@
 </style>
 </head>
 <body>
+    	<img src='/springmvc/resources/images/main.jpg'>
 	<header>
       <div class="title">
         <div class="top" style="text-align: end">
@@ -87,6 +88,5 @@
         </div>
       </div>
     </header>
-    	<img src='/springmvc/resources/images/main.jpg'>
 </body>
 </html>
