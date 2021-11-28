@@ -36,7 +36,7 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/info.do")
-	public String getRestaurant(ProjectDO pdo, ProjectDAO pdao, Model model) {
+	public String getRestaurant(ProjectDO pdo, Model model) {
 		System.out.println("--> ProjectController: getRestaurant()");
 		System.out.println("seq : " + pdo.getSeq());
 		
@@ -45,17 +45,6 @@ public class ProjectController {
 		
 		return "info";
 	}
-	
-//	@RequestMapping(value="getBoard.do")
-//	public String getBoard(ProjectDO pdo, ProjectDAO bdao, Model model) {
-//		System.out.println("--> [BoardControllerSpring] BoardController: getBoard()");
-//		System.out.println("seq : " + pdo.getSeq());
-//		
-//		ProjectDO board = pdao.getBoard(pdo);
-//		model.addAttribute("board", board);
-//		
-//		return "getBoardView";
-//	}
 	
 	@RequestMapping(value="/write.do")
 	public String writeInfo() {
@@ -73,39 +62,38 @@ public class ProjectController {
 		return "redirect:list.do";
 	}
 	
-	
-	@RequestMapping(value="/modifyBoard.do")
+	@RequestMapping(value="/modifyRestaurant.do")
 	public String modifyBoard(ProjectDO pdo, Model model) {
-		System.out.println("--> [BoardControllerSpring] BoardController : modifyBOard()");
+		System.out.println("--> ProjectController: modifyBoard()");
 		System.out.println("seq : " + pdo.getSeq());
 		
-		ProjectDO board = pdao.getBoard(pdo);
-		model.addAttribute("board", board);
+		ProjectDO restaurant = pdao.getBoard(pdo);
+		model.addAttribute("restaurant", restaurant);
 		
-		return "modifyBoardView";
+		return "modifyRestaurant";
 	}
 	
-	@RequestMapping(value="/modifyProcBoard.do")
+	@RequestMapping(value="/modifyProc.do")
 	public String modifyProcBoard(ProjectDO pdo, Model model) {
-		System.out.println("--> [BoardControllerSpring] BoardController: modifyProcBoard() ");
+		System.out.println("--> ProjectController: modifyProcBoard() ");
 		System.out.println("seq : " + pdo.getSeq());
 		System.out.println("title : " + pdo.getTitle());
 		System.out.println("content : " + pdo.getContent());
 		
 		pdao.updateBoard(pdo);
 		
-		return "redirect:getBoardList.do";
+		return "redirect:list.do";
 	}
 	
-	@RequestMapping(value="/deleteBoard.do")
+	@RequestMapping(value="/deleteRestaurant.do")
 	public String deleteBoard(ProjectDO pdo, ProjectDAO bdao, Model model) {
 		
-		System.out.println("--> [BoardControllerSpring] DeleteBoardController : deleteBoard()");
+		System.out.println("--> ProjectController: deleteBoard()");
 		System.out.println("seq : " + pdo.getSeq());
 		
 		pdao.deleteBoard(pdo);
 		
-		return "redirect:getBoardList.do";
+		return "redirect:list.do";
 	}
 	
 	@RequestMapping(value="/searchBoardList.do")

@@ -48,8 +48,8 @@ public class ProjectDAO {
 	public void updateBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- updateBoard() 贸府 --");
 		
-		String sql = "update boardService set title=?, content=? where seq=?";
-		Object[] args = {pdo.getTitle(), pdo.getContent(), pdo.getSeq()};
+		String sql = "update restaurant set title=?, score=?, content=?, address=?, number=?, food=?, businessHours=?, breakTime=?, lastOrder=? where seq=?";
+		Object[] args = {pdo.getTitle(), pdo.getScore(), pdo.getContent(), pdo.getAddress(), pdo.getNumber(), pdo.getFood(), pdo.getBusinessHours(), pdo.getBreakTime(), pdo.getLastOrder(), pdo.getSeq()};
 		jdbcTemplate.update(sql, args);
 	}
 	
@@ -57,8 +57,9 @@ public class ProjectDAO {
 	public void deleteBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- deleteBoard() 贸府 --");		
 		
-		String sql = "delete from boardService where seq=?";
+		String sql = "delete from restaurant where seq=?";
 		Object[] args = {pdo.getSeq()};
+		
 		jdbcTemplate.update(sql, args);
 	}
 	

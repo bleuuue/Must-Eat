@@ -65,71 +65,71 @@
 	<jsp:include page="headerMenu.jsp"></jsp:include>
 	<header class="basic-info-list">
 		<div class="inner" style="padding-bottom: 10px">
-			<h1>추천 맛집 작성</h1>
+			<h1>추천 맛집 수정</h1>
 		</div>
 	</header>
 	<div class="inner">
-		<form action="insertProc.do" method="post">
+		<form action="modifyProc.do?seq=${restaurant.seq}" method="post">
 			<table class="pg-restaurant">
 				<tbody style="">
 					<tr>
 						<th class="rth">이름</th>
 						<td class="rtd">
-							<input type="text" name="title">
+							<input type="text" value="${restaurant.title}" name="title">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">평점</th>
 						<td class="rtd">
-							<input type="text" name="score">
+							<input type="text" value="${restaurant.score}" name="score">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">설명</th>
 						<td class="rtd">
-							<input type="text" name="content">
+							<input type="text" value="${restaurant.content}" name="content">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">주소</th>
 						<td class="rtd">
-							<input type="text" name="address">
+							<input type="text" value="${restaurant.address}" name="address">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">전화번호</th>
 						<td class="rtd">
-							<input type="text" name="number">
+							<input type="text" value="${restaurant.number}" name="number">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">음식 종류</th>
 						<td class="rtd">
-							<input type="text" name="food">
+							<input type="text" value="${restaurant.food}" name="food">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">영업시간</th>
 						<td class="rtd">
-							<input type="text" name="businessHours">
+							<input type="text" value="${restaurant.businessHours}" name="businessHours">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">break-time</th>
 						<td class="rtd">
-							<input type="text" name="breakTime">
+							<input type="text" value="${restaurant.breakTime}" name="breakTime">
 						</td>
 					</tr>
 					<tr>
 						<th class="rth">last-order</th>
 						<td class="rtd">
-							<input type="text" name="lastOrder">
+							<input type="text" value="${restaurant.lastOrder}" name="lastOrder">
 						</td>
 					</tr>
 					<tr>
 						<th></th>
 						<td style="border: none;">
-							<input type="submit" value="등록" style="height: 40px; cursor: pointer; background-color: #ff7100; color: white; padding-top: 10px; padding-bottom: 10px;">
+							<input type="submit" value="수정" style="height: 40px; cursor: pointer; background-color: #ff7100; color: white; padding-top: 10px; padding-bottom: 10px;">
 						</td>
 					</tr>
 				</tbody>

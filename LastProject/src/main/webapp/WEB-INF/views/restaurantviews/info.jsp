@@ -102,6 +102,18 @@
 	    vertical-align: middle;
 	    padding-bottom: 5px;
 	}
+	input {
+		width: 100px;
+		height: 40px;
+		border: 0 none;
+		background-color: #ff7100;
+		color: white;
+		padding-top: 10px;
+		padding-bottom: 10px
+	}
+	input:focus {
+		outline:none;
+	}
 </style>
 </head>
 <body>
@@ -138,7 +150,7 @@
 		<header>
 			<div>
 				<span class="restaurant-title">
-					<h1 class="">${restaurant.title}</h1>
+					<h1>${restaurant.title}</h1>
 					<strong class="rate-point">
 						<span>${restaurant.score}</span>
 					</strong>
@@ -176,6 +188,10 @@
 				</tr>
 			</tbody>
 		</table>
+		<div style="text-align:end">
+			<input style="cursor: pointer;" type="button" value="수정하기" onclick="location.href='modifyRestaurant.do?seq=${restaurant.seq}'">
+			<input style="cursor: pointer;" type="button" value="삭제하기" onclick="location.href='deleteRestaurant.do?seq=${restaurant.seq}'">
+		</div>
 	</section>
 </body>
 </html>

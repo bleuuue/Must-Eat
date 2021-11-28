@@ -113,14 +113,14 @@
 	<jsp:include page="headerMenu.jsp"></jsp:include>
 	<header class="basic-info-list">
 		<div class="inner" style="padding-bottom: 10px">
-			<h1>왕십리 맛집 베스트 10</h1>
+			<h1>왕십리 맛집 베스트</h1>
 		</div>
 	</header>
 	<div class="inner">
 		<ul class="restaurants-list">
 			<c:forEach items="${plist}" var="restaurant">
 				<li class="toplist">
-					<a href="info.do?seq=${restaurant.seq}">
+					<a href='info.do?seq=${restaurant.seq}'>
 						<div class="review">
 							<figure class="item">
 								<div class="thumb" style="float: left">
