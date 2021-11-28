@@ -37,6 +37,12 @@ public class ProjectController {
 		return "info";
 	}
 	
+	@RequestMapping(value="/write.do")
+	public String writeInfo() {
+		System.out.println("--> ProjectController: writeInfo()");
+		return "write";
+	}
+	
 	@RequestMapping(value="/insertBoard.do")
 	public String insertBoard() {
 		System.out.println("--> [BoardControllerSpring] BoardController:insertBoard()");

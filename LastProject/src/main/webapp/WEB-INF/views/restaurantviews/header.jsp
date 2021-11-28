@@ -23,7 +23,11 @@
 	  height: 63px;
 	  width: 1903px;
 	  height: 500px;
-	  background-color: rgb(32, 56, 100);
+	  text-align: center;
+	  background-position: center;
+	  background-size: cover;
+	  overflow: hidden;
+	  background-color: rgba(0,0,0,0.3);
 	}
 	.top {
 	  position: relative;
@@ -70,14 +74,19 @@
 	    margin-left: 30px;
 	    outline: none;
 	}
+	.main-header {
+		text-align: center;
+    	background-position: center;
+    	background-size: cover;
+        overflow: hidden;
+	}
 
 </style>
 </head>
 <body>
-    	<img src='/springmvc/resources/images/main.jpg'>
 	<header>
-      <div class="title">
-        <div class="top" style="text-align: end">
+      <div class="title" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/main.jpg');">
+        <div class="top" style="text-align: end" onclick="location.href='write.do'">
         	맛집 추가
 	     </div>
         <div class="titleT" style="margin-top: 100px; font-size: 2.2rem;">솔직한 리뷰, 믿을 수 있는 평점!

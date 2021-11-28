@@ -42,7 +42,6 @@
 	.info {
 		height: 236px;
 	    width: 546px;
-	    background-color: rgba(0,0,0,0.2);
 	    box-sizing: border-box;
 	    position: relative;
 	    display: flex;
@@ -94,10 +93,9 @@
 			<div class="slick-list">
 				<div class="slick-track">
 					<ul class="list" style="margin-left: -13px">
-						<li>
-							<img />
+						<li style="margin-bottom: 30px;">
 							<a href="list.do" style="text-decoration : none;">
-								<div class="info">
+								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
 									<div class="info_inner_wrap">
 										<span class="infoTitle">한남동 맛집 베스트</span>
 									</div>
@@ -105,48 +103,53 @@
 							</a>
 						</li>
 						<li>
-							<img />
-							<div class="info">
-								<div class="info_inner_wrap">
-									<span class="infoTitle">한남동 맛집 베스트</span>
+							<a href="list.do" style="text-decoration : none;">
+								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+									<div class="info_inner_wrap">
+										<span class="infoTitle">한남동 맛집 베스트</span>
+									</div>
 								</div>
-							</div>
+							</a>
 						</li>
 					</ul>
 					<ul class="list">
-						<li>
-							<img />
-							<div class="info">
-								<div class="info_inner_wrap">
-									<span class="infoTitle">한남동 맛집 베스트</span>
+						<li style="margin-bottom: 30px;">
+							<a href="list.do" style="text-decoration : none;">
+								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+									<div class="info_inner_wrap">
+										<span class="infoTitle">한남동 맛집 베스트</span>
+									</div>
 								</div>
-							</div>
+							</a>
 						</li>
 						<li>
-							<img />
-							<div class="info">
-								<div class="info_inner_wrap">
-									<span class="infoTitle">한남동 맛집 베스트</span>
+							<a href="list.do" style="text-decoration : none;">
+								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+									<div class="info_inner_wrap">
+										<span class="infoTitle">한남동 맛집 베스트</span>
+									</div>
 								</div>
-							</div>
+							</a>
 						</li>
 					</ul>
 					<ul class="list">
-						<li>
-							<img />
-							<div class="info">
-								<div class="info_inner_wrap">
-									<span class="infoTitle">한남동 맛집 베스트</span>
+						<li style="margin-bottom: 30px;">
+							<a href="list.do" style="text-decoration : none;">
+								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+									<div class="info_inner_wrap">
+										<span class="infoTitle">한남동 맛집 베스트</span>
+									</div>
 								</div>
-							</div>
+							</a>
 						</li>
 						<li>
-							<img />
-							<div class="info">
-								<div class="info_inner_wrap">
-									<span class="infoTitle">한남동 맛집 베스트</span>
+							<a href="list.do" style="text-decoration : none;">
+								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+									<div class="info_inner_wrap">
+										<span class="infoTitle">한남동 맛집 베스트</span>
+									</div>
 								</div>
-							</div>
+							</a>
 						</li>
 					</ul>
 				</div>

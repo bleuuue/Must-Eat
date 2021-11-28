@@ -21,9 +21,9 @@
 </head>
 <body>
 	<table class="top">
-       <tr onclick="location.href='main.do'">
-         <td width="2300">Must - Eat</td>
-         <td width="200">맛집 추가</td>
+       <tr>
+         <td width="2300" onclick="location.href='main.do'" style="color: #ff7100;">Must - Eat</td>
+         <td width="200" onclick="location.href='write.do'">맛집 추가</td>
        </tr>
      </table>
 </body>

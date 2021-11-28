@@ -52,10 +52,26 @@
 	.item {
 		display: flex;
 	}
+	.thumb{
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 238px;
+	    width: 238px;
+	    overflow: hidden;
+	    background-size: cover;
+	    background-position: 50% 50%;
+	}
 	.foodImg{
-		  background-color: #f7f7f7;
-		  width: 238px;
-		  height: 238px;
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	    overflow: hidden;
+    	background-size: cover;
+}
 	}
 	.info {
 		position: relative;
@@ -86,7 +102,7 @@
         text-overflow: ellipsis;
     	white-space: nowrap;
     	padding-right: 10px;
-    	padding-left: 50px;
+    	padding-left: 110px;
 	}
 </style>
 </head>
@@ -103,15 +119,15 @@
 				<a href="info.do">
 					<div class="review">
 						<figure class="item">
-							<div style="float: left">
-								<img class="foodImg"></img>
+							<div class="thumb" style="float: left">
+								<div class="foodImg" style="background-image: url('/springmvc/resources/images/sushi.jpg');"></div>
 							</div>
-							<div style="float: left">
+							<div style="float: left; margin-left:150px;">
 								<div class="info">
 									<span class="foodTitle">찡떡</span>
 									<strong class="point">4.9</strong>
 									<p class="etc">서울특별시 성동구 사근로</p>
-									<span></span>
+									<span>asdfasdfasdfsd</span>
 								</div>
 							</div>
 						</figure>
