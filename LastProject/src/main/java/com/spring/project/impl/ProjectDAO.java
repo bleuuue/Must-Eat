@@ -17,11 +17,11 @@ public class ProjectDAO {
 	private JdbcTemplate jdbcTemplate;
 	
 	//DO로 넘어오는 데이터를 받아서 데이터베이스에 저장
-	public void insertBoard(ProjectDO bdo) {
+	public void insertBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- insertBoard() 처리 --");
 		
 		String sql = "insert into boardService (title, writer, content) values (?, ?, ?)";
-		Object[] args = {bdo.getTitle(), bdo.getWriter(), bdo.getContent()};
+		Object[] args = {pdo.getTitle(), pdo.getWriter(), pdo.getContent()};
 		jdbcTemplate.update(sql, args);
 		
 		System.out.println("-- 데이터베이스 처리 완료(insertBoard) --");
@@ -35,30 +35,30 @@ public class ProjectDAO {
 	}
 	
 	//글 조회
-	public ProjectDO getBoard(ProjectDO bdo) {
+	public ProjectDO getBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- getBoard() 처리 --");		
 		
 		String sql = "select * from boardService where seq=?";
-		Object[] args = {bdo.getSeq()};
+		Object[] args = {pdo.getSeq()};
 		
 		return jdbcTemplate.queryForObject(sql, args, new BoardRowMapper());
 	}
 	
 	//글 수정하기
-	public void updateBoard(ProjectDO bdo) {
+	public void updateBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- updateBoard() 처리 --");
 		
 		String sql = "update boardService set title=?, content=? where seq=?";
-		Object[] args = {bdo.getTitle(), bdo.getContent(), bdo.getSeq()};
+		Object[] args = {pdo.getTitle(), pdo.getContent(), pdo.getSeq()};
 		jdbcTemplate.update(sql, args);
 	}
 	
 	//글 삭제
-	public void deleteBoard(ProjectDO bdo) {
+	public void deleteBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- deleteBoard() 처리 --");		
 		
 		String sql = "delete from boardService where seq=?";
-		Object[] args = {bdo.getSeq()};
+		Object[] args = {pdo.getSeq()};
 		jdbcTemplate.update(sql, args);
 	}
 	

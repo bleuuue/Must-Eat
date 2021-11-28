@@ -44,31 +44,31 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/insertProcBoard.do", method=RequestMethod.GET)
-	public String insertProcBoardGet(ProjectDO bdo) {
+	public String insertProcBoardGet(ProjectDO pdo) {
 		System.out.println("--> [BoardControllerSpring] BoardController: insertProcBoardGet()");
-		System.out.println("title : " + bdo.getTitle());
-		System.out.println("writer : " + bdo.getWriter());
-		System.out.println("content : " + bdo.getContent());
+		System.out.println("title : " + pdo.getTitle());
+		System.out.println("writer : " + pdo.getWriter());
+		System.out.println("content : " + pdo.getContent());
 
-		pdao.insertBoard(bdo);
+		pdao.insertBoard(pdo);
 		
 		return "redirect:getBoardList.do";
 	}
 	
 	@RequestMapping(value="/insertProcBoard.do", method=RequestMethod.POST)
-	public String insertProcBoardPost(ProjectDO bdo) {
+	public String insertProcBoardPost(ProjectDO pdo) {
 		System.out.println("--> [BoardControllerSpring] BoardController: insertProcBoardPost()");		
-		System.out.println("title : " + bdo.getTitle());
-		System.out.println("writer : " + bdo.getWriter());
-		System.out.println("content : " + bdo.getContent());
+		System.out.println("title : " + pdo.getTitle());
+		System.out.println("writer : " + pdo.getWriter());
+		System.out.println("content : " + pdo.getContent());
 
-		pdao.insertBoard(bdo);
+		pdao.insertBoard(pdo);
 		
 		return "redirect:getBoardList.do";
 	}
 	
 	@RequestMapping(value="/getBoardList.do")
-	public String getBoardList(ProjectDO bdo, Model model) {
+	public String getBoardList(ProjectDO pdo, Model model) {
 		System.out.println("--> [BoardControllerSpring] BoardController:getBoardList()");
 
 		ArrayList<ProjectDO> blist = pdao.getBoardList();
@@ -78,46 +78,46 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="getBoard.do")
-	public String getBoard(ProjectDO bdo, ProjectDAO bdao, Model model) {
+	public String getBoard(ProjectDO pdo, ProjectDAO bdao, Model model) {
 		System.out.println("--> [BoardControllerSpring] BoardController: getBoard()");
-		System.out.println("seq : " + bdo.getSeq());
+		System.out.println("seq : " + pdo.getSeq());
 		
-		ProjectDO board = pdao.getBoard(bdo);
+		ProjectDO board = pdao.getBoard(pdo);
 		model.addAttribute("board", board);
 		
 		return "getBoardView";
 	}
 	
 	@RequestMapping(value="/modifyBoard.do")
-	public String modifyBoard(ProjectDO bdo, Model model) {
+	public String modifyBoard(ProjectDO pdo, Model model) {
 		System.out.println("--> [BoardControllerSpring] BoardController : modifyBOard()");
-		System.out.println("seq : " + bdo.getSeq());
+		System.out.println("seq : " + pdo.getSeq());
 		
-		ProjectDO board = pdao.getBoard(bdo);
+		ProjectDO board = pdao.getBoard(pdo);
 		model.addAttribute("board", board);
 		
 		return "modifyBoardView";
 	}
 	
 	@RequestMapping(value="/modifyProcBoard.do")
-	public String modifyProcBoard(ProjectDO bdo, Model model) {
+	public String modifyProcBoard(ProjectDO pdo, Model model) {
 		System.out.println("--> [BoardControllerSpring] BoardController: modifyProcBoard() ");
-		System.out.println("seq : " + bdo.getSeq());
-		System.out.println("title : " + bdo.getTitle());
-		System.out.println("content : " + bdo.getContent());
+		System.out.println("seq : " + pdo.getSeq());
+		System.out.println("title : " + pdo.getTitle());
+		System.out.println("content : " + pdo.getContent());
 		
-		pdao.updateBoard(bdo);
+		pdao.updateBoard(pdo);
 		
 		return "redirect:getBoardList.do";
 	}
 	
 	@RequestMapping(value="/deleteBoard.do")
-	public String deleteBoard(ProjectDO bdo, ProjectDAO bdao, Model model) {
+	public String deleteBoard(ProjectDO pdo, ProjectDAO bdao, Model model) {
 		
 		System.out.println("--> [BoardControllerSpring] DeleteBoardController : deleteBoard()");
-		System.out.println("seq : " + bdo.getSeq());
+		System.out.println("seq : " + pdo.getSeq());
 		
-		pdao.deleteBoard(bdo);
+		pdao.deleteBoard(pdo);
 		
 		return "redirect:getBoardList.do";
 	}
