@@ -111,23 +111,23 @@
 			<div class="wrapper-outer">
 				<div class="owl-wrapper">
 					<div class="owl-item">
-						<div class="center-croping" style="background-image: url('/springmvc/resources/images/sushi1.jpg');">
+						<div class="center-croping" style="background-image: url(${restaurant.image1});">
 						</div>
 					</div>
 					<div class="owl-item">
-						<div class="center-croping" style="background-image: url('/springmvc/resources/images/sushi1.jpg');">
+						<div class="center-croping" style="background-image: url(${restaurant.image2});">
 						</div>
 					</div>
 					<div class="owl-item">
-						<div class="center-croping" style="background-image: url('/springmvc/resources/images/sushi1.jpg');">
+						<div class="center-croping" style="background-image: url(${restaurant.image3});">
 						</div>
 					</div>
 					<div class="owl-item">
-						<div class="center-croping" style="background-image: url('/springmvc/resources/images/sushi1.jpg');">
+						<div class="center-croping" style="background-image: url(${restaurant.image4});">
 						</div>
 					</div>
 					<div class="owl-item">
-						<div class="center-croping" style="background-image: url('/springmvc/resources/images/sushi1.jpg');">
+						<div class="center-croping" style="background-image: url(${restaurant.image5});">
 						</div>
 					</div>
 				</div>
@@ -138,46 +138,41 @@
 		<header>
 			<div>
 				<span class="restaurant-title">
-					<h1 class="">나비스시</h1>
+					<h1 class="">${restaurant.title}</h1>
 					<strong class="rate-point">
-						<span>4.4</span>
+						<span>${restaurant.score}</span>
 					</strong>
 				</span>
 			</div>
 		</header>
 		<div class="line">
-			스시 존맛탱 ㄴㅁㄹ아ㅣㅓ닝ㄹ미낭러ㅣㄴ러ㅏㅇㄴ러ㅣ넘ㄹ<br>
-			ㅁㄴㅇㄹㄴ망러ㅣ너리ㅏ너ㅣㄹ
+			${restaurant.content}
 		</div>
 		<table class="pg-restaurant">
 			<tbody>
 				<tr>
 					<th class="rth">주소</th>
-					<td class="rtd">경기도 성남시 분당구 돌마로</td>
+					<td class="rtd">${restaurant.address}</td>
 				</tr>
 				<tr>
 					<th class="rth">전화번호</th>
-					<td class="rtd">324203</td>
+					<td class="rtd">${restaurant.number}</td>
 				</tr>
 				<tr>
 					<th class="rth">음식 종류</th>
-					<td class="rtd">324203</td>
-				</tr>
-				<tr>
-					<th class="rth">가격대</th>
-					<td class="rtd">324203</td>
+					<td class="rtd">${restaurant.food}</td>
 				</tr>
 				<tr>
 					<th class="rth">영업시간</th>
-					<td class="rtd">324203</td>
+					<td class="rtd">${restaurant.businessHours}</td>
 				</tr>
 				<tr>
 					<th class="rth">break-time</th>
-					<td class="rtd">324203</td>
+					<td class="rtd">${restaurant.breakTime}</td>
 				</tr>
 				<tr>
 					<th class="rth">last-order</th>
-					<td class="rtd">324203</td>
+					<td class="rtd">${restaurant.lastOrder}</td>
 				</tr>
 			</tbody>
 		</table>

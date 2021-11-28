@@ -16,33 +16,33 @@ public class ProjectDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	//DO로 넘어오는 데이터를 받아서 데이터베이스에 저장
+	public ArrayList<ProjectDO> getBoardList() {
+		System.out.println("[Spring JDBC] -- getBoardList() 처리--");
+		
+		String sql = "select * from restaurant";
+		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, new BoardRowMapper());
+	}
+	
+	public ProjectDO getBoard(ProjectDO pdo) {
+		System.out.println("[Spring JDBC] -- getBoard() 처리 --");		
+		
+		String sql = "select * from restaurant where seq=?";
+		Object[] args = {pdo.getSeq()};
+		
+		return jdbcTemplate.queryForObject(sql, args, new BoardRowMapper());
+	}
+	
 	public void insertBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- insertBoard() 처리 --");
 		
-		String sql = "insert into boardService (title, writer, content) values (?, ?, ?)";
-		Object[] args = {pdo.getTitle(), pdo.getWriter(), pdo.getContent()};
+		String sql = "insert into restaurant (title, score, content, address, number, food, businessHours, breakTime, lastOrder) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		Object[] args = {pdo.getTitle(), pdo.getScore(), pdo.getContent(), pdo.getAddress(), pdo.getNumber(), pdo.getFood(), pdo.getBusinessHours(), pdo.getBreakTime(), pdo.getLastOrder()};
 		jdbcTemplate.update(sql, args);
 		
 		System.out.println("-- 데이터베이스 처리 완료(insertBoard) --");
 	}
 	
-	public ArrayList<ProjectDO> getBoardList() {
-		System.out.println("[Spring JDBC] -- getBoardList() 처리--");
-		
-		String sql = "select * from boardService";
-		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, new BoardRowMapper());
-	}
 	
-	//글 조회
-	public ProjectDO getBoard(ProjectDO pdo) {
-		System.out.println("[Spring JDBC] -- getBoard() 처리 --");		
-		
-		String sql = "select * from boardService where seq=?";
-		Object[] args = {pdo.getSeq()};
-		
-		return jdbcTemplate.queryForObject(sql, args, new BoardRowMapper());
-	}
 	
 	//글 수정하기
 	public void updateBoard(ProjectDO pdo) {
@@ -85,13 +85,24 @@ class BoardRowMapper implements RowMapper<ProjectDO>{
 	public ProjectDO mapRow(ResultSet rs, int rowNum) throws SQLException {
 		System.out.println("[Spring JDBC] BoardRowMapper -->");
 		
-		ProjectDO board = new ProjectDO();
-		board.setSeq(rs.getInt(1));
-		board.setTitle(rs.getString(2));
-		board.setWriter(rs.getString(3));
-		board.setContent(rs.getNString(4));
-		board.setRegdate(rs.getString(5));
+		ProjectDO restaurant = new ProjectDO();
+		restaurant.setSeq(rs.getInt(1));
+		restaurant.setTitle(rs.getString(2));
+		restaurant.setScore(rs.getFloat(3));
+		restaurant.setContent(rs.getNString(4));
+		restaurant.setAddress(rs.getString(5));
+		restaurant.setNumber(rs.getString(6));
+		restaurant.setFood(rs.getString(7));
+		restaurant.setBusinessHours(rs.getString(8));
+		restaurant.setBreakTime(rs.getString(9));
+		restaurant.setLastOrder(rs.getString(10));
+		restaurant.setTitleImage(rs.getString(11));
+		restaurant.setImage1(rs.getString(12));
+		restaurant.setImage2(rs.getString(13));
+		restaurant.setImage3(rs.getString(14));
+		restaurant.setImage4(rs.getString(15));
+		restaurant.setImage5(rs.getString(16));
 		
-		return board;
+		return restaurant;
 	}
 }

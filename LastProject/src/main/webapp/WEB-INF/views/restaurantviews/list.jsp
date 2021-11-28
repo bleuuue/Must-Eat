@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,25 +118,27 @@
 	</header>
 	<div class="inner">
 		<ul class="restaurants-list">
-			<li class="toplist">
-				<a href="info.do">
-					<div class="review">
-						<figure class="item">
-							<div class="thumb" style="float: left">
-								<div class="foodImg" style="background-image: url('/springmvc/resources/images/sushi.jpg');"></div>
-							</div>
-							<div style="float: left; margin-left:150px;">
-								<div class="info">
-									<span class="foodTitle">찡떡</span>
-									<strong class="point">4.9</strong>
-									<p class="etc">서울특별시 성동구 사근로</p>
-									<span>asdfasdfasdfsd</span>
+			<c:forEach items="${plist}" var="restaurant">
+				<li class="toplist">
+					<a href="info.do?seq=${restaurant.seq}">
+						<div class="review">
+							<figure class="item">
+								<div class="thumb" style="float: left">
+									<div class="foodImg" style="background-image: url(${restaurant.titleImage});"></div>
 								</div>
-							</div>
-						</figure>
-					</div>
-				</a>
-			</li>
+								<div style="float: left; margin-left:150px;">
+									<div class="info">
+										<span class="foodTitle">${restaurant.title}</span>
+										<strong class="point">${restaurant.score}</strong>
+										<p class="etc">${restaurant.address}</p>
+										<span>${restaurant.content}</span>
+									</div>
+								</div>
+							</figure>
+						</div>
+					</a>
+				</li>
+			</c:forEach>
 		</ul>
 	</div>
 </body>

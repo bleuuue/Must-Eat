@@ -26,16 +26,36 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/list.do")
-	public String showList() {
+	public String showList(ProjectDO pdo, Model model) {
 		System.out.println("--> ProjectController: showList()");
+		
+		ArrayList<ProjectDO> plist = pdao.getBoardList();
+		model.addAttribute("plist", plist);
+		
 		return "list";
 	}
 	
 	@RequestMapping(value="/info.do")
-	public String getRestaurant() {
+	public String getRestaurant(ProjectDO pdo, ProjectDAO pdao, Model model) {
 		System.out.println("--> ProjectController: getRestaurant()");
+		System.out.println("seq : " + pdo.getSeq());
+		
+		ProjectDO restaurant = pdao.getBoard(pdo);
+		model.addAttribute("restaurant", restaurant);
+		
 		return "info";
 	}
+	
+//	@RequestMapping(value="getBoard.do")
+//	public String getBoard(ProjectDO pdo, ProjectDAO bdao, Model model) {
+//		System.out.println("--> [BoardControllerSpring] BoardController: getBoard()");
+//		System.out.println("seq : " + pdo.getSeq());
+//		
+//		ProjectDO board = pdao.getBoard(pdo);
+//		model.addAttribute("board", board);
+//		
+//		return "getBoardView";
+//	}
 	
 	@RequestMapping(value="/write.do")
 	public String writeInfo() {
@@ -43,56 +63,16 @@ public class ProjectController {
 		return "write";
 	}
 	
-	@RequestMapping(value="/insertBoard.do")
-	public String insertBoard() {
-		System.out.println("--> [BoardControllerSpring] BoardController:insertBoard()");
-		return "insertBoardView";
-	}
-	
-	@RequestMapping(value="/insertProcBoard.do", method=RequestMethod.GET)
+	@RequestMapping(value="/insertProc.do", method=RequestMethod.POST)
 	public String insertProcBoardGet(ProjectDO pdo) {
-		System.out.println("--> [BoardControllerSpring] BoardController: insertProcBoardGet()");
+		System.out.println("--> ProjectController: insertProcGet()");
 		System.out.println("title : " + pdo.getTitle());
-		System.out.println("writer : " + pdo.getWriter());
-		System.out.println("content : " + pdo.getContent());
-
+		
 		pdao.insertBoard(pdo);
 		
-		return "redirect:getBoardList.do";
+		return "redirect:list.do";
 	}
 	
-	@RequestMapping(value="/insertProcBoard.do", method=RequestMethod.POST)
-	public String insertProcBoardPost(ProjectDO pdo) {
-		System.out.println("--> [BoardControllerSpring] BoardController: insertProcBoardPost()");		
-		System.out.println("title : " + pdo.getTitle());
-		System.out.println("writer : " + pdo.getWriter());
-		System.out.println("content : " + pdo.getContent());
-
-		pdao.insertBoard(pdo);
-		
-		return "redirect:getBoardList.do";
-	}
-	
-	@RequestMapping(value="/getBoardList.do")
-	public String getBoardList(ProjectDO pdo, Model model) {
-		System.out.println("--> [BoardControllerSpring] BoardController:getBoardList()");
-
-		ArrayList<ProjectDO> blist = pdao.getBoardList();
-		model.addAttribute("blist", blist);
-		
-		return "getBoardListView";
-	}
-	
-	@RequestMapping(value="getBoard.do")
-	public String getBoard(ProjectDO pdo, ProjectDAO bdao, Model model) {
-		System.out.println("--> [BoardControllerSpring] BoardController: getBoard()");
-		System.out.println("seq : " + pdo.getSeq());
-		
-		ProjectDO board = pdao.getBoard(pdo);
-		model.addAttribute("board", board);
-		
-		return "getBoardView";
-	}
 	
 	@RequestMapping(value="/modifyBoard.do")
 	public String modifyBoard(ProjectDO pdo, Model model) {
