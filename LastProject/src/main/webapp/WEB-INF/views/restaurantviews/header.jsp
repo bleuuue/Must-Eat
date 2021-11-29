@@ -47,6 +47,7 @@
 		border-radius: 80px;
     	overflow: hidden;
     	background-color: #ffffff;
+    	display: flex;
 	}
 	.btn-search {
 	    width: 180px;
@@ -62,16 +63,26 @@
         color: #ffffff;
         border: 0px;
 	}
-	.searc-input {
+	.search-option {
+		width: 70px;
+    	height: 31px;
+        display: block;
+        border: 0 none;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        outline: none;
+	}
+	.search-input {
 		line-height: 50px;
-	    color: #cbcbcb;
+	    color: #757575;
 	    opacity: 1;
 	    height: 50px;
 	    font-size: 1.1rem;
 	    display: block;
 	    width: 100%;
 	    border: 0px;
-	    margin-left: 30px;
+	    margin-left: 105px;
 	    outline: none;
 	}
 	.main-header {
@@ -91,10 +102,17 @@
 	     </div>
         <div class="titleT" style="margin-top: 100px; font-size: 2.2rem;">솔직한 리뷰, 믿을 수 있는 평점!
         <div class="titleT" style="margin-top: 2px; font-size: 3.2rem;">Must - Eat</div>
-        <div class="titleT search">
-        	<input class="searc-input" type="text" placeholder="지역, 식당 또는 음식" maxlength="50"/>
-        	<input class="btn-search" type="submit" value="검색"/>
-        </div>
+        <form action="searchRestaurant.do" method="post">
+	        <div class="titleT search">
+				    <select class="search-option" name="searchCon">
+						<option value="title">식당</option>
+						<option value="address">주소</option>
+						<option value="food">음식</option>
+					</select>
+	        	<input class="search-input" type="text" name="searchKey" placeholder="지역, 식당 또는 음식" maxlength="50"/>
+	        	<input class="btn-search" type="submit" value="검색"/>
+	        </div>
+        </form>
       </div>
     </header>
 </body>

@@ -3,6 +3,8 @@ package com.spring.project.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,7 +21,7 @@ public class ProjectDAO {
 	public ArrayList<ProjectDO> getBoardList() {
 		System.out.println("[Spring JDBC] -- getBoardList() 贸府--");
 		
-		String sql = "select * from restaurant";
+		String sql = "select * from restaurant order by score desc";
 		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, new BoardRowMapper());
 	}
 	
@@ -42,9 +44,6 @@ public class ProjectDAO {
 		System.out.println("-- 单捞磐海捞胶 贸府 肯丰(insertBoard) --");
 	}
 	
-	
-	
-	//臂 荐沥窍扁
 	public void updateBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- updateBoard() 贸府 --");
 		
@@ -53,7 +52,6 @@ public class ProjectDAO {
 		jdbcTemplate.update(sql, args);
 	}
 	
-	//臂 昏力
 	public void deleteBoard(ProjectDO pdo) {
 		System.out.println("[Spring JDBC] -- deleteBoard() 贸府 --");		
 		
@@ -68,15 +66,31 @@ public class ProjectDAO {
 		
 		String sql = "";
 		if(searchCon.equals("title")) {
-			sql = "select * from boardservice where title=? order by seq desc";
-		} else if(searchCon.equals("content")) { 
-			sql = "select * from boardservice where content=? order by seq asc";
-		} else if(searchCon.equals("writer")) { 
-			sql = "select * from boardservice where writer=? order by seq asc";
+			sql = "select * from restaurant where title like ? order by score desc";
+		} else if(searchCon.equals("address")) { 
+			sql = "select * from restaurant where address like ? order by score desc";
+		} else if(searchCon.equals("food")) { 
+			sql = "select * from restaurant where food like ? order by score desc";
 		}
-		Object[] args = {searchKey};
-		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, args, new BoardRowMapper());
 
+		Object[] args = {"%" + searchKey + "%"};
+		
+		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, args, new BoardRowMapper());
+	}
+	
+	public ArrayList<ProjectDO> orderRestaurantList(String searchKey) {
+		System.out.println("[Spring JDBC] --> orderRestaurantList() 贸府 -- ");
+		
+		String sql = "";
+		if(searchKey.equals("high")) {
+			sql = "select * from restaurant order by score desc";
+		} else if(searchKey.equals("low")) { 
+			sql = "select * from restaurant order by score";
+		} else if(searchKey.equals("title")) { 
+			sql = "select * from restaurant order by title";
+		}
+		
+		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, new BoardRowMapper());
 	}
 }
 

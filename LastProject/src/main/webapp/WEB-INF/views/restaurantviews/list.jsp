@@ -25,6 +25,15 @@
         display: block;
         text-align: center;
 	}
+	.search-option {
+		width: 120px;
+    	height: 31px;
+        display: block;
+        border: 0 none;
+        outline: none;
+        margin-left: 375px;
+        font-size: 1rem;
+	}
 	.restaurants-list {
 		margin-top: 5px;
 		list-style: none;
@@ -74,6 +83,7 @@
 	    object-fit: cover;
 	    overflow: hidden;
     	background-size: cover;
+    	background-position: center;
 }
 	}
 	.info {
@@ -105,7 +115,6 @@
         text-overflow: ellipsis;
     	white-space: nowrap;
     	padding-right: 10px;
-    	padding-left: 110px;
 	}
 </style>
 </head>
@@ -117,6 +126,13 @@
 		</div>
 	</header>
 	<div class="inner">
+		<form action="orderRestaurant.do" method="post">
+			<select class="search-option" name="searchKey" onChange="this.form.submit()">
+				<option value="high">평점 높은순</option>
+				<option value="low">평점 낮은순</option>
+				<option value="title">이름순</option>
+			</select>
+		</form>
 		<ul class="restaurants-list">
 			<c:forEach items="${plist}" var="restaurant">
 				<li class="toplist">
@@ -126,12 +142,14 @@
 								<div class="thumb" style="float: left">
 									<div class="foodImg" style="background-image: url(${restaurant.titleImage});"></div>
 								</div>
-								<div style="float: left; margin-left:150px;">
+								<div style="float: left; margin-left:230px;">
 									<div class="info">
-										<span class="foodTitle">${restaurant.title}</span>
-										<strong class="point">${restaurant.score}</strong>
-										<p class="etc">${restaurant.address}</p>
-										<span>${restaurant.content}</span>
+										<div style="text-align: start;">
+											<span class="foodTitle">${restaurant.title}</span>
+											<strong class="point">${restaurant.score}</strong>
+										</div>
+										<p class="etc" style="text-align: start;">${restaurant.address}</p>
+										<p style="text-align: start;">${restaurant.content}</span>
 									</div>
 								</div>
 							</figure>

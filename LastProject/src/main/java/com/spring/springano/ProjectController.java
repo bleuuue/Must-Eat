@@ -96,20 +96,31 @@ public class ProjectController {
 		return "redirect:list.do";
 	}
 	
-	@RequestMapping(value="/searchBoardList.do")
-	public String searchBoardList(@RequestParam(value="searchCon") String searchCon,
-								@RequestParam(value="searchKey") String searchKey,
-								ProjectDAO bdao, Model model) {
+	@RequestMapping(value="/searchRestaurant.do")
+	public String searchRestaurant(@RequestParam(value="searchCon") String searchCon,
+								@RequestParam(value="searchKey") String searchKey, Model model) {
 		
-		System.out.println("--> [BoardControllerSpring] BoardController : searchBoardList()");
+		System.out.println("--> ProjectController : searchRestaurant()");
 		
 		System.out.println("searchCon : " + searchCon);
 		System.out.println("searchKey : " + searchKey);
 		
-		ArrayList<ProjectDO> blist = pdao.searchBoardList(searchCon, searchKey);
-		model.addAttribute("blist", blist);
+		ArrayList<ProjectDO> plist = pdao.searchBoardList(searchCon, searchKey);
+		model.addAttribute("plist", plist);
+
+		return "list";
+	}
+	
+	@RequestMapping(value="/orderRestaurant.do")
+	public String searchRestaurant(@RequestParam(value="searchKey") String searchKey, Model model) {
 		
-		//return "redirect:getBoardList.do";
-		return "getBoardListView";
+		System.out.println("--> ProjectController : orderRestaurant()");
+		
+		System.out.println("searchKey : " + searchKey);
+		
+		ArrayList<ProjectDO> plist = pdao.orderRestaurantList(searchKey);
+		model.addAttribute("plist", plist);
+
+		return "list";
 	}
 }

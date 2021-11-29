@@ -74,10 +74,11 @@
         float: left;
     	min-height: 1px;
 	}
-	ex-img {
-		width: 481px;
-		height: 236px;
-		background-color: red;
+	.center-croping {
+	    object-fit: cover;
+	    background-position: center;
+	  	background-size: cover;
+	  	overflow: hidden;
 	}
 </style>
 </head>
@@ -95,18 +96,18 @@
 					<ul class="list" style="margin-left: -13px">
 						<li style="margin-bottom: 30px;">
 							<a href="list.do" style="text-decoration : none;">
-								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+								<div class="info center-croping" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/sushi.jpg');">
 									<div class="info_inner_wrap">
-										<span class="infoTitle">한남동 맛집 베스트</span>
+										<span class="infoTitle">왕십리 맛집 베스트</span>
 									</div>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="list.do" style="text-decoration : none;">
-								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+								<div class="info center-croping" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
 									<div class="info_inner_wrap">
-										<span class="infoTitle">한남동 맛집 베스트</span>
+										<span class="infoTitle">이태원 맛집 베스트</span>
 									</div>
 								</div>
 							</a>
@@ -115,18 +116,18 @@
 					<ul class="list">
 						<li style="margin-bottom: 30px;">
 							<a href="list.do" style="text-decoration : none;">
-								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+								<div class="info center-croping" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/desert.jpg');">
 									<div class="info_inner_wrap">
-										<span class="infoTitle">한남동 맛집 베스트</span>
+										<span class="infoTitle">디저트 인기 맛집</span>
 									</div>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="list.do" style="text-decoration : none;">
-								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+								<div class="info center-croping" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick2.jpg');">
 									<div class="info_inner_wrap">
-										<span class="infoTitle">한남동 맛집 베스트</span>
+										<span class="infoTitle">연말 모임 추천</span>
 									</div>
 								</div>
 							</a>
@@ -135,18 +136,18 @@
 					<ul class="list">
 						<li style="margin-bottom: 30px;">
 							<a href="list.do" style="text-decoration : none;">
-								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+								<div class="info center-croping" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick4.jpg');">
 									<div class="info_inner_wrap">
-										<span class="infoTitle">한남동 맛집 베스트</span>
+										<span class="infoTitle">파스타 인기 맛집</span>
 									</div>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="list.do" style="text-decoration : none;">
-								<div class="info" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick1.jpg');">
+								<div class="info center-croping" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('/springmvc/resources/images/slick3.jpg');">
 									<div class="info_inner_wrap">
-										<span class="infoTitle">한남동 맛집 베스트</span>
+										<span class="infoTitle">떡볶이 인기 맛집</span>
 									</div>
 								</div>
 							</a>
