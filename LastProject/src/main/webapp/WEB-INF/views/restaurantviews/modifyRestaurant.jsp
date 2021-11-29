@@ -122,8 +122,44 @@
 					</tr>
 					<tr>
 						<th class="rth">last-order</th>
-						<td class="rtd">
+						<td class="rtd" style="padding-bottom: 50px;">
 							<input type="text" value="${restaurant.lastOrder}" name="lastOrder">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">title-image</th>
+						<td class="rtd">
+							<input type="text" value="${restaurant.titleImage}" name="titleImage">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image1</th>
+						<td class="rtd">
+							<input type="text" value="${restaurant.image1}" name="image1">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image2</th>
+						<td class="rtd">
+							<input type="text" value="${restaurant.image2}" name="image2">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image3</th>
+						<td class="rtd">
+							<input type="text" value="${restaurant.image3}" name="image3">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image4</th>
+						<td class="rtd">
+							<input type="text" value="${restaurant.image4}" name="image4">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image5</th>
+						<td class="rtd">
+							<input type="text" value="${restaurant.image5}" name="image5">
 						</td>
 					</tr>
 					<tr>

@@ -129,7 +129,7 @@
 		</div>
 	</header>
 	<div class="inner">
-		<form action="orderRestaurant.do" method="post">
+		<form action="sortRestaurant.do" method="post">
 			<select class="search-option" name="searchKey" onChange="this.form.submit()">
 				<option value="high">평점 높은순</option>
 				<option value="low">평점 낮은순</option>

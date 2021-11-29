@@ -18,15 +18,15 @@ public class ProjectDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	public ArrayList<ProjectDO> getBoardList() {
-		System.out.println("[Spring JDBC] -- getBoardList() 贸府--");
+	public ArrayList<ProjectDO> getRestaurantList() {
+		System.out.println("[Spring JDBC] -- getRestaurantList() 贸府--");
 		
 		String sql = "select * from restaurant order by score desc";
 		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, new BoardRowMapper());
 	}
 	
-	public ProjectDO getBoard(ProjectDO pdo) {
-		System.out.println("[Spring JDBC] -- getBoard() 贸府 --");		
+	public ProjectDO getRestaurant(ProjectDO pdo) {
+		System.out.println("[Spring JDBC] -- getRestaurant() 贸府 --");		
 		
 		String sql = "select * from restaurant where seq=?";
 		Object[] args = {pdo.getSeq()};
@@ -34,26 +34,26 @@ public class ProjectDAO {
 		return jdbcTemplate.queryForObject(sql, args, new BoardRowMapper());
 	}
 	
-	public void insertBoard(ProjectDO pdo) {
-		System.out.println("[Spring JDBC] -- insertBoard() 贸府 --");
+	public void insertRestaurant(ProjectDO pdo) {
+		System.out.println("[Spring JDBC] -- insertRestaurant() 贸府 --");
 		
-		String sql = "insert into restaurant (title, score, content, address, number, food, businessHours, breakTime, lastOrder) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		Object[] args = {pdo.getTitle(), pdo.getScore(), pdo.getContent(), pdo.getAddress(), pdo.getNumber(), pdo.getFood(), pdo.getBusinessHours(), pdo.getBreakTime(), pdo.getLastOrder()};
+		String sql = "insert into restaurant (title, score, content, address, number, food, businessHours, breakTime, lastOrder, titleImage, image1, image2, image3, image4, image5) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		Object[] args = {pdo.getTitle(), pdo.getScore(), pdo.getContent(), pdo.getAddress(), pdo.getNumber(), pdo.getFood(), pdo.getBusinessHours(), pdo.getBreakTime(), pdo.getLastOrder(), pdo.getTitleImage(), pdo.getImage1(), pdo.getImage2(), pdo.getImage3(), pdo.getImage4(), pdo.getImage5()};
 		jdbcTemplate.update(sql, args);
 		
 		System.out.println("-- 单捞磐海捞胶 贸府 肯丰(insertBoard) --");
 	}
 	
-	public void updateBoard(ProjectDO pdo) {
-		System.out.println("[Spring JDBC] -- updateBoard() 贸府 --");
+	public void updateRestaurant(ProjectDO pdo) {
+		System.out.println("[Spring JDBC] -- updateRestaurant() 贸府 --");
 		
 		String sql = "update restaurant set title=?, score=?, content=?, address=?, number=?, food=?, businessHours=?, breakTime=?, lastOrder=? where seq=?";
 		Object[] args = {pdo.getTitle(), pdo.getScore(), pdo.getContent(), pdo.getAddress(), pdo.getNumber(), pdo.getFood(), pdo.getBusinessHours(), pdo.getBreakTime(), pdo.getLastOrder(), pdo.getSeq()};
 		jdbcTemplate.update(sql, args);
 	}
 	
-	public void deleteBoard(ProjectDO pdo) {
-		System.out.println("[Spring JDBC] -- deleteBoard() 贸府 --");		
+	public void deleteRestaurant(ProjectDO pdo) {
+		System.out.println("[Spring JDBC] -- deleteRestaurant() 贸府 --");		
 		
 		String sql = "delete from restaurant where seq=?";
 		Object[] args = {pdo.getSeq()};
@@ -61,7 +61,7 @@ public class ProjectDAO {
 		jdbcTemplate.update(sql, args);
 	}
 	
-	public ArrayList<ProjectDO> searchBoardList(String searchCon, String searchKey) {
+	public ArrayList<ProjectDO> searchRestaurant(String searchCon, String searchKey) {
 		System.out.println("[Spring JDBC] --> searchBoardList() 贸府 -- ");
 		
 		String sql = "";
@@ -78,7 +78,7 @@ public class ProjectDAO {
 		return (ArrayList<ProjectDO>) jdbcTemplate.query(sql, args, new BoardRowMapper());
 	}
 	
-	public ArrayList<ProjectDO> orderRestaurantList(String searchKey) {
+	public ArrayList<ProjectDO> sortRestaurant(String searchKey) {
 		System.out.println("[Spring JDBC] --> orderRestaurantList() 贸府 -- ");
 		
 		String sql = "";

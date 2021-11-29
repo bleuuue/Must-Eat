@@ -29,7 +29,7 @@ public class ProjectController {
 	public String showList(ProjectDO pdo, Model model) {
 		System.out.println("--> ProjectController: showList()");
 		
-		ArrayList<ProjectDO> plist = pdao.getBoardList();
+		ArrayList<ProjectDO> plist = pdao.getRestaurantList();
 		model.addAttribute("plist", plist);
 		
 		return "list";
@@ -40,7 +40,7 @@ public class ProjectController {
 		System.out.println("--> ProjectController: getRestaurant()");
 		System.out.println("seq : " + pdo.getSeq());
 		
-		ProjectDO restaurant = pdao.getBoard(pdo);
+		ProjectDO restaurant = pdao.getRestaurant(pdo);
 		model.addAttribute("restaurant", restaurant);
 		
 		return "info";
@@ -57,7 +57,7 @@ public class ProjectController {
 		System.out.println("--> ProjectController: insertProcGet()");
 		System.out.println("title : " + pdo.getTitle());
 		
-		pdao.insertBoard(pdo);
+		pdao.insertRestaurant(pdo);
 		
 		return "redirect:list.do";
 	}
@@ -67,7 +67,7 @@ public class ProjectController {
 		System.out.println("--> ProjectController: modifyBoard()");
 		System.out.println("seq : " + pdo.getSeq());
 		
-		ProjectDO restaurant = pdao.getBoard(pdo);
+		ProjectDO restaurant = pdao.getRestaurant(pdo);
 		model.addAttribute("restaurant", restaurant);
 		
 		return "modifyRestaurant";
@@ -80,7 +80,7 @@ public class ProjectController {
 		System.out.println("title : " + pdo.getTitle());
 		System.out.println("content : " + pdo.getContent());
 		
-		pdao.updateBoard(pdo);
+		pdao.updateRestaurant(pdo);
 		
 		return "redirect:list.do";
 	}
@@ -91,7 +91,7 @@ public class ProjectController {
 		System.out.println("--> ProjectController: deleteBoard()");
 		System.out.println("seq : " + pdo.getSeq());
 		
-		pdao.deleteBoard(pdo);
+		pdao.deleteRestaurant(pdo);
 		
 		return "redirect:list.do";
 	}
@@ -105,20 +105,20 @@ public class ProjectController {
 		System.out.println("searchCon : " + searchCon);
 		System.out.println("searchKey : " + searchKey);
 		
-		ArrayList<ProjectDO> plist = pdao.searchBoardList(searchCon, searchKey);
+		ArrayList<ProjectDO> plist = pdao.searchRestaurant(searchCon, searchKey);
 		model.addAttribute("plist", plist);
 
 		return "list";
 	}
 	
-	@RequestMapping(value="/orderRestaurant.do")
+	@RequestMapping(value="/sortRestaurant.do")
 	public String searchRestaurant(@RequestParam(value="searchKey") String searchKey, Model model) {
 		
 		System.out.println("--> ProjectController : orderRestaurant()");
 		
 		System.out.println("searchKey : " + searchKey);
 		
-		ArrayList<ProjectDO> plist = pdao.orderRestaurantList(searchKey);
+		ArrayList<ProjectDO> plist = pdao.sortRestaurant(searchKey);
 		model.addAttribute("plist", plist);
 
 		return "list";

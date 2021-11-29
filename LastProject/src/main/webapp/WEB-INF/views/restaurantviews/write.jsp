@@ -122,8 +122,44 @@
 					</tr>
 					<tr>
 						<th class="rth">last-order</th>
-						<td class="rtd">
+						<td class="rtd" style="padding-bottom: 50px;">
 							<input type="text" name="lastOrder">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">title-image</th>
+						<td class="rtd">
+							<input type="text" name="titleImage">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image1</th>
+						<td class="rtd">
+							<input type="text" name="image1">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image2</th>
+						<td class="rtd">
+							<input type="text" name="image2">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image3</th>
+						<td class="rtd">
+							<input type="text" name="image3">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image4</th>
+						<td class="rtd">
+							<input type="text" name="image4">
+						</td>
+					</tr>
+					<tr>
+						<th class="rth">serve-image5</th>
+						<td class="rtd">
+							<input type="text" name="image5">
 						</td>
 					</tr>
 					<tr>
