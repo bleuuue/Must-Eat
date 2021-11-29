@@ -40,6 +40,7 @@
 		position: relative;
 		float: left;
 		border: 0 none;
+		text-align: center;
 	}
 	.center-croping {
 		position: absolute;
@@ -48,8 +49,11 @@
 	    width: 100%;
 	    height: 100%;
 	    object-fit: cover;
+	    background-size: cover;
+	    overflow: hidden;
         border: none;
    		vertical-align: top;
+   		background-position: center;
 	}
 	.restaurant-detail {
 		width: 800px;

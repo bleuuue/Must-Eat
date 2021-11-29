@@ -116,6 +116,9 @@
     	white-space: nowrap;
     	padding-right: 10px;
 	}
+	.content {
+		color: #555;
+	}
 </style>
 </head>
 <body>
@@ -149,7 +152,7 @@
 											<strong class="point">${restaurant.score}</strong>
 										</div>
 										<p class="etc" style="text-align: start;">${restaurant.address}</p>
-										<p style="text-align: start;">${restaurant.content}</span>
+										<p class="content" style="text-align: start;">${restaurant.content}</span>
 									</div>
 								</div>
 							</figure>
