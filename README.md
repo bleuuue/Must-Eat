@@ -28,7 +28,7 @@
 
 ## **[ Flow Chart ]**
 
-<img src="https://user-images.githubusercontent.com/79898245/154736011-4afb6a55-c50e-425a-bbc2-35f2830deb32.png">
+<img src="https://user-images.githubusercontent.com/79898245/154736011-4afb6a55-c50e-425a-bbc2-35f2830deb32.png" width="650">
 
 ---
 
