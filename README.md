@@ -16,7 +16,7 @@
 ## **[ Technical Skills ]**
 
 *   Programming Language
-    *   Java, Spring, Tomcat, Spring JDBC
+    *   Java, Spring, Spring JDBC, jsp, Tomcat, 
 *   Tools
     *   Eclipse, HeidiSQL
 
