@@ -4,6 +4,10 @@
 
 ---
 
+<img src="https://user-images.githubusercontent.com/79898245/154747177-bf2afd1b-a49a-430e-b439-780573f6487b.gif">
+
+---
+
 ## **[ About ]**
 > ### **맛집 정보 제공 서비스**
 웹프레임워크 학교 수업 과제로 개발한 프로젝트입니다.
